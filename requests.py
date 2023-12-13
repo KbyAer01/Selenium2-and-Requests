@@ -22,7 +22,6 @@ geoResponse = requests.get(f"https://geoip.maxmind.com/geoip/v2.1/city/{ip_addre
                            headers={'Authorization': f'Bearer {token}'})
 timeZone = json.loads(geoResponse.content)["location"]["time_zone"]
 
-#test str
 # Получение данных о часовых поясах с внешнего ресурса 'https://gist.github.com/salkar/19df1918ee2aed6669e2.js'
 timezonesResponse = requests.get("https://gist.github.com/salkar/19df1918ee2aed6669e2.js")
 timezonesResponse.encoding = timezonesResponse.apparent_encoding
